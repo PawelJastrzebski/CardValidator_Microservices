@@ -1,4 +1,4 @@
-package com.jastrzab.SDA_CardValidator_App.domain.model;
+package com.jastrzab.SDA_CardIssuerFinder.domain.model;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;

@@ -1,11 +1,11 @@
-package com.jastrzab.SDA_CardValidator_App.api;
+package com.jastrzab.SDA_CardIssuerFinder.api;
 
-import com.jastrzab.SDA_CardValidator_App.domain.model.Entity.Issuer;
-import com.jastrzab.SDA_CardValidator_App.domain.model.IssuerServiceResponse;
-import com.jastrzab.SDA_CardValidator_App.domain.model.WebError;
-import com.jastrzab.SDA_CardValidator_App.domain.services.IssuerRepositoryImp;
-import com.jastrzab.SDA_CardValidator_App.domain.services.cardNumberValidator.CardNumberValidator;
-import com.jastrzab.SDA_CardValidator_App.domain.services.cardNumberValidator.InvalidLengthException;
+import com.jastrzab.SDA_CardIssuerFinder.domain.model.Entity.Issuer;
+import com.jastrzab.SDA_CardIssuerFinder.domain.model.IssuerServiceResponse;
+import com.jastrzab.SDA_CardIssuerFinder.domain.model.WebError;
+import com.jastrzab.SDA_CardIssuerFinder.domain.services.IssuerRepositoryImp;
+import com.jastrzab.SDA_CardIssuerFinder.domain.services.cardNumberValidator.CardNumberValidator;
+import com.jastrzab.SDA_CardIssuerFinder.domain.services.cardNumberValidator.InvalidLengthException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;

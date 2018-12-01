@@ -1,4 +1,4 @@
-package com.jastrzab.SDA_CardValidator_App.domain.services.cardNumberValidator;
+package com.jastrzab.SDA_CardIssuerFinder.domain.services.cardNumberValidator;
 
 public class InvalidLengthException extends RuntimeException {
 

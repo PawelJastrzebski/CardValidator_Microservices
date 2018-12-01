@@ -1,9 +1,9 @@
-package com.jastrzab.SDA_CardValidator_App.infrastructure;
+package com.jastrzab.SDA_CardIssuerFinder.infrastructure;
 
-import com.jastrzab.SDA_CardValidator_App.domain.model.Entity.IINNumber;
-import com.jastrzab.SDA_CardValidator_App.domain.model.Entity.Issuer;
-import com.jastrzab.SDA_CardValidator_App.domain.services.IINNumberRepository;
-import com.jastrzab.SDA_CardValidator_App.domain.services.IssuerRepository;
+import com.jastrzab.SDA_CardIssuerFinder.domain.model.Entity.IINNumber;
+import com.jastrzab.SDA_CardIssuerFinder.domain.model.Entity.Issuer;
+import com.jastrzab.SDA_CardIssuerFinder.domain.services.IINNumberRepository;
+import com.jastrzab.SDA_CardIssuerFinder.domain.services.IssuerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 

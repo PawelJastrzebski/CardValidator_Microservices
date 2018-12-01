@@ -1,4 +1,4 @@
-package com.jastrzab.SDA_CardValidator_App;
+package com.jastrzab.SDA_CardIssuerFinder;
 
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

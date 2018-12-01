@@ -1,4 +1,4 @@
-package com.jastrzab.SDA_CardValidator_App.domain.model.Entity;
+package com.jastrzab.SDA_CardIssuerFinder.domain.model.Entity;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
