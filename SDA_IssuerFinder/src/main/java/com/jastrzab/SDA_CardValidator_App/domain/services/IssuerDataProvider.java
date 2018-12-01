@@ -58,11 +58,11 @@ public class IssuerDataProvider {
 
         Issuer chinaUnionPay = issuerRepository.save(new Issuer("China UnionPay"));
         IINNumber iin62 = iinNumberRepository.save(new IINNumber("62"));
-        chinaTUnion.addIINNumer(iin62);
+        chinaUnionPay.addIINNumer(iin62);
         issuerRepository.save(chinaUnionPay);
 
 
-        Issuer dinersClubenRoute = issuerRepository.save(new Issuer("China UnionPay"));
+        Issuer dinersClubenRoute = issuerRepository.save(new Issuer("Diners Club enRoute"));
         IINNumber iin2014 = iinNumberRepository.save(new IINNumber("2014"));
         IINNumber iin2149 = iinNumberRepository.save(new IINNumber("2149"));
         dinersClubenRoute.addIINNumer(iin2014);
@@ -128,7 +128,7 @@ public class IssuerDataProvider {
         issuerRepository.save(interPayment);
 
 
-        Issuer instaPayment = issuerRepository.save(new Issuer("InterPayment"));
+        Issuer instaPayment = issuerRepository.save(new Issuer("InstaPayment"));
         IINNumber iin637 = iinNumberRepository.save(new IINNumber("637"));
         IINNumber iin638 = iinNumberRepository.save(new IINNumber("638"));
         IINNumber iin639 = iinNumberRepository.save(new IINNumber("639"));
