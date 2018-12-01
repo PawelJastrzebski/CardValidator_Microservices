@@ -1,7 +1,6 @@
-package com.jastrzab.SDA_CardValidator_App.domain.prots;
+package com.jastrzab.SDA_CardValidator_App.domain.services;
 
 import com.jastrzab.SDA_CardValidator_App.domain.model.Entity.IINNumber;
-import com.jastrzab.SDA_CardValidator_App.domain.model.Entity.Issuer;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

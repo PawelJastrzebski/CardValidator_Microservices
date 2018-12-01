@@ -1,9 +1,9 @@
-package com.jastrzab.SDA_CardValidator_App.domain.services;
+package com.jastrzab.SDA_CardValidator_App.infrastructure;
 
 import com.jastrzab.SDA_CardValidator_App.domain.model.Entity.IINNumber;
 import com.jastrzab.SDA_CardValidator_App.domain.model.Entity.Issuer;
-import com.jastrzab.SDA_CardValidator_App.domain.prots.IINNumberRepository;
-import com.jastrzab.SDA_CardValidator_App.domain.prots.IssuerRepository;
+import com.jastrzab.SDA_CardValidator_App.domain.services.IINNumberRepository;
+import com.jastrzab.SDA_CardValidator_App.domain.services.IssuerRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
@@ -32,8 +32,6 @@ public class IssuerDataProvider {
         americanExpress.addIINNumer(iin34);
         americanExpress.addIINNumer(iin37);
         issuerRepository.save(americanExpress);
-
-
 
         Issuer bankcard = issuerRepository.save(new Issuer("Bankcard"));
         IINNumber iin5610 = iinNumberRepository.save(new IINNumber("5610"));
