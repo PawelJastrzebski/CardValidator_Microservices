@@ -95,6 +95,57 @@ public class IssuerDataProvider {
         issuerRepository.save(dinersClubInternational);
 
 
+        Issuer dinersClub = issuerRepository.save(new Issuer("Diners Club United States & Canada"));
+        IINNumber iin54 = iinNumberRepository.save(new IINNumber("54"));
+        IINNumber iin55 = iinNumberRepository.save(new IINNumber("55"));
+        dinersClub.addIINNumer(iin54);
+        dinersClub.addIINNumer(iin55);
+        issuerRepository.save(dinersClub);
+
+
+        Issuer discoverCard = issuerRepository.save(new Issuer("Discover Card"));
+        IINNumber iin6011 = iinNumberRepository.save(new IINNumber("6011"));
+        IINNumber iin64 = iinNumberRepository.save(new IINNumber("64"));
+        IINNumber iin65 = iinNumberRepository.save(new IINNumber("65"));
+        discoverCard.addIINNumer(iin6011);
+        discoverCard.addIINNumer(iin64);
+        discoverCard.addIINNumer(iin65);
+        issuerRepository.save(discoverCard);
+
+        Issuer ruPay = issuerRepository.save(new Issuer("RuPay"));
+        IINNumber iin60 = iinNumberRepository.save(new IINNumber("60"));
+        IINNumber iin6521 = iinNumberRepository.save(new IINNumber("6521"));
+        IINNumber iin6522 = iinNumberRepository.save(new IINNumber("6522"));
+        ruPay.addIINNumer(iin60);
+        ruPay.addIINNumer(iin6521);
+        ruPay.addIINNumer(iin6522);
+        issuerRepository.save(ruPay);
+
+
+        Issuer interPayment = issuerRepository.save(new Issuer("InterPayment"));
+        IINNumber iin636 = iinNumberRepository.save(new IINNumber("636"));
+        interPayment.addIINNumer(iin636);
+        issuerRepository.save(interPayment);
+
+
+        Issuer instaPayment = issuerRepository.save(new Issuer("InterPayment"));
+        IINNumber iin637 = iinNumberRepository.save(new IINNumber("637"));
+        IINNumber iin638 = iinNumberRepository.save(new IINNumber("638"));
+        IINNumber iin639 = iinNumberRepository.save(new IINNumber("639"));
+        instaPayment.addIINNumer(iin637);
+        instaPayment.addIINNumer(iin638);
+        instaPayment.addIINNumer(iin639);
+        issuerRepository.save(instaPayment);
+
+
+        Issuer jcb = issuerRepository.save(new Issuer("JCB"));
+
+        for (int i = 3528; i <=3589 ; i++) {
+            IINNumber innJCB = iinNumberRepository.save(new IINNumber(String.valueOf(i)));
+            jcb.addIINNumer(innJCB);
+        }
+
+        issuerRepository.save(jcb);
 
     }
 
