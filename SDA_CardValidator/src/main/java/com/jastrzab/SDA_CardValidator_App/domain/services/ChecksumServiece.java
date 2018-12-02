@@ -16,7 +16,9 @@ public class ChecksumServiece {
     @Autowired
     private RestTemplate restTemplate;
     public boolean isChecksumCorrect(String cardNumber) {
-            ResponseEntity<ChecksumServiceResponse> responseEntity = restTemplate.getForEntity(serviceUrl + "/checksum/", ChecksumServiceResponse.class);
+        String url = serviceUrl + "/checksum/" + cardNumber;
+        System.out.println(url);
+        ResponseEntity<ChecksumServiceResponse> responseEntity = restTemplate.getForEntity(url, ChecksumServiceResponse.class);
             return responseEntity.getBody().getIsCorrect();
     }
 }

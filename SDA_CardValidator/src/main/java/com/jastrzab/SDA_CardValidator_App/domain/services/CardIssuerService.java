@@ -18,7 +18,9 @@ public class CardIssuerService {
 
     public String findIssuer(String cardNumber) {
 
-        ResponseEntity<IssuerServiceResponse> responseEntity = restTemplate.getForEntity(serviceUrl + "/issuer/", IssuerServiceResponse.class);
+        String url = serviceUrl + "/issuer/" + cardNumber;
+        System.out.println(url);
+        ResponseEntity<IssuerServiceResponse> responseEntity = restTemplate.getForEntity(url, IssuerServiceResponse.class);
         return responseEntity.getBody().getIssuerName();
     }
 }

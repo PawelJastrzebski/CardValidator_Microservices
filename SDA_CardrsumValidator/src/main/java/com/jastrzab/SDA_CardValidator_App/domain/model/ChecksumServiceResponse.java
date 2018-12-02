@@ -9,4 +9,5 @@ import lombok.Setter;
 @NoArgsConstructor
 public class ChecksumServiceResponse {
     Boolean isCorrect;
+    String errorReason;
 }
