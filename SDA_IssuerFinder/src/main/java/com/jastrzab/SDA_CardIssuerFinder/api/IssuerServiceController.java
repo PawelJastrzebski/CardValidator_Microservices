@@ -3,6 +3,7 @@ package com.jastrzab.SDA_CardIssuerFinder.api;
 import com.jastrzab.SDA_CardIssuerFinder.domain.model.Entity.Issuer;
 import com.jastrzab.SDA_CardIssuerFinder.domain.model.IssuerServiceResponse;
 import com.jastrzab.SDA_CardIssuerFinder.domain.model.WebError;
+import com.jastrzab.SDA_CardIssuerFinder.domain.services.IssuerNotFoundException;
 import com.jastrzab.SDA_CardIssuerFinder.domain.services.IssuerRepositoryImp;
 import com.jastrzab.SDA_CardIssuerFinder.domain.services.cardNumberValidator.CardNumberValidator;
 import com.jastrzab.SDA_CardIssuerFinder.domain.services.cardNumberValidator.InvalidLengthException;
@@ -34,7 +35,6 @@ public class IssuerServiceController {
         List<String> iinList = this.generatePossibleIINList(cardNumber);
         Issuer issuer = issuerRepository.findByIIN(iinList);
         IssuerServiceResponse issuerServiceResponse = new IssuerServiceResponse(issuer.getName());
-
         return new ResponseEntity<>(issuerServiceResponse, HttpStatus.OK);
     }
 
@@ -51,5 +51,11 @@ public class IssuerServiceController {
     private ResponseEntity<WebError> error(InvalidLengthException e){
         WebError webError = new WebError(e.getMessage());
         return new ResponseEntity<>(webError,HttpStatus.BAD_REQUEST);
+    }
+
+    @ExceptionHandler(IssuerNotFoundException.class)
+    private ResponseEntity<IssuerServiceResponse> errorIssuerNotFound(IssuerNotFoundException e){
+        IssuerServiceResponse issuerServiceResponse = new IssuerServiceResponse("Not Found");
+        return new ResponseEntity<>(issuerServiceResponse, HttpStatus.OK);
     }
 }

@@ -4,6 +4,7 @@ import com.jastrzab.SDA_CardIssuerFinder.domain.model.Entity.Issuer;
 import org.springframework.stereotype.Repository;
 
 import javax.persistence.EntityManager;
+import javax.persistence.NoResultException;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 import java.util.List;
@@ -18,8 +19,13 @@ public class IssuerRepositoryImp {
     public Issuer findByIIN(List<String> iinList){
         String query = "SELECT i FROM Issuer i JOIN FETCH i.iinNumbers n WHERE n.iin in :iinList";
 
+        try{
+
         return em.createQuery(query, Issuer.class)
                 .setParameter("iinList",iinList)
                 .getSingleResult();
+        }catch (NoResultException e){
+            throw new IssuerNotFoundException("Issuer not found");
+        }
     }
 }

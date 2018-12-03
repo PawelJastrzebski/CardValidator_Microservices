@@ -4,7 +4,7 @@ class Form extends Component {
     constructor(props) {
         super(props)
         this.data = {
-            host: "https://localhost",
+            host: "http://localhost:8080/",
         }
         this.state = {
             cardNumber: ""
@@ -21,7 +21,7 @@ class Form extends Component {
     }
     getData() {
         console.log(this.state.cardNumber)
-        fetch(this.data.host + '/card/' + this.state.cardNumber)
+        fetch(this.data.host + 'card/' + this.state.cardNumber)
             .then(response => response.json())
             .then(json => this.props.callback(json))
     }
