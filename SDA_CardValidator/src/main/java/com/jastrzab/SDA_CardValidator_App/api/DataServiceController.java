@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
@@ -25,9 +26,14 @@ public class DataServiceController {
         this.cardIssuerService = cardIssuerService;
     }
 
+
+    @CrossOrigin
     @GetMapping("/card/{number}")
     public ResponseEntity<AnalysisResponse> getCardAnalysisData(@PathVariable String number){
-        String issuer = cardIssuerService.findIssuer(number);
+        String issuer = "not found";
+        try{
+           issuer = cardIssuerService.findIssuer(number);
+        }catch (Exception e){}
         boolean isCorrect = checksumServiece.isChecksumCorrect(number);
 
         return new ResponseEntity<>(new AnalysisResponse(issuer,isCorrect), HttpStatus.OK);
