@@ -56,6 +56,6 @@ public class IssuerServiceController {
     @ExceptionHandler(IssuerNotFoundException.class)
     private ResponseEntity<IssuerServiceResponse> errorIssuerNotFound(IssuerNotFoundException e){
         IssuerServiceResponse issuerServiceResponse = new IssuerServiceResponse("Not Found");
-        return new ResponseEntity<>(issuerServiceResponse, HttpStatus.OK);
+        return new ResponseEntity<>(issuerServiceResponse, HttpStatus.NOT_FOUND);
     }
 }

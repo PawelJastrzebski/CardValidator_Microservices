@@ -1,6 +1,5 @@
 package com.jastrzab.SDA_CardValidator_App.domain.services;
 
-import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
 @Service

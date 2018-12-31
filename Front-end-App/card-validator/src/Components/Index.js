@@ -61,13 +61,8 @@ class Index extends Component {
     }
     onDataReceived(data) {
         console.log(data)
-        if (data.validationPassed == undefined) {
-            this.data.isValid = false;
-            this.data.issuer = "No result"
-        } else {
-            this.data.isValid = data.validationPassed;
-            this.data.issuer = data.issuer;
-        }
+        this.data.isValid = data.validationPassed;
+        this.data.issuer = data.issuer;
 
         this.setState({ showResult: true })
         console.log(this.data)
